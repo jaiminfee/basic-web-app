@@ -8,11 +8,16 @@ export default function QueryProcessor(query: string): string {
   }
 
   if (query.toLowerCase().includes("name")) {
-    return "Rohan";
+    return "jfee";
   }
 
   if (query.toLowerCase().includes("id")) {
     return "jfee";
+  }
+
+  if (query.toLowerCase().includes("largest")) {
+    const numbers = query.match(/\d+/g)?.map(Number) || [];
+    return String(Math.max(...numbers));
   }
 
   return "";
