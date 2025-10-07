@@ -20,5 +20,10 @@ export default function QueryProcessor(query: string): string {
     return String(Math.max(...numbers));
   }
 
+  if (query.toLowerCase().includes("plus")) {
+    const numbers = query.match(/\d+/g)?.map(Number) || [];
+    return String(numbers.reduce((sum, num) => sum + num, 0));
+  }
+
   return "";
 }
